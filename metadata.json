@@ -1,0 +1,6 @@
+{
+  "name": "SkillBarter – Student Time-Bank",
+  "description": "Campus-only peer skill-swap platform for college students. Learn a skill, teach a skill, grow together using time-bank credits.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

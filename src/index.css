@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --paper: #F6F1E7;
+    --paper-2: #ECE5D3;
+    --ink: #1B2420;
+    --forest: #1F5C42;
+    --leaf: #3E8E64;
+    --mint: #BFE6CF;
+    --mustard: #E3B53C;
+    --rose: #B8325A;
+    --muted: #6A716B;
+    --line: #D8D0BC;
+    --card-bg: #FFFFFF;
+    --shadow-color: #1B2420;
+  }
+
+  .dark {
+    --paper: #141A17;
+    --paper-2: #1D2622;
+    --ink: #F6F1E7;
+    --forest: #3E8E64;
+    --leaf: #52B582;
+    --mint: #254B3A;
+    --mustard: #E3B53C;
+    --rose: #E0537D;
+    --muted: #A3ACA5;
+    --line: #2F3E37;
+    --card-bg: #1B2420;
+    --shadow-color: #0A0E0C;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  h1, h2, h3, h4, .font-serif-heading {
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
+  }
+
+  .font-mono-val {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Hard offset brutalist shadow */
+.brutal-shadow {
+  box-shadow: 4px 4px 0px var(--shadow-color);
+}
+
+.brutal-shadow-sm {
+  box-shadow: 2px 2px 0px var(--shadow-color);
+}
+
+.brutal-shadow-lg {
+  box-shadow: 6px 6px 0px var(--shadow-color);
+}
+
+.brutal-shadow-mustard {
+  box-shadow: 4px 4px 0px var(--mustard);
+}
+
+.brutal-shadow-forest {
+  box-shadow: 4px 4px 0px var(--forest);
+}
+
+.brutal-btn {
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0px var(--shadow-color);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, background-color 0.15s ease, border-color 0.15s ease;
+  will-change: transform, box-shadow;
+}
+
+.brutal-btn:hover:not(:disabled) {
+  transform: translate(-2px, -3px) scale(1.03);
+  box-shadow: 5px 6px 0px var(--shadow-color);
+}
+
+.brutal-btn:active:not(:disabled) {
+  transform: translate(2px, 2px) scale(0.98);
+  box-shadow: 1px 1px 0px var(--shadow-color);
+}
+
+.brutal-card {
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px 0px var(--shadow-color);
+  background-color: var(--card-bg);
+  border-radius: 12px;
+}
+
+/* Paper grain noise overlay */
+.paper-grain {
+  background-image: radial-gradient(var(--ink) 0.5px, transparent 0.5px);
+  background-size: 16px 16px;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+/* Subtle hand-made rotation utility */
+.tilt-left {
+  transform: rotate(-1.5deg);
+}
+
+.tilt-right {
+  transform: rotate(1.5deg);
+}
+
+/* Accessible focus ring */
+*:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 2px;
+}
